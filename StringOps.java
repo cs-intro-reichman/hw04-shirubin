@@ -44,11 +44,15 @@ public class StringOps {
     public static String camelCase (String string) {
         // Write your code here:
         string = lowerCase(string);
+        boolean firstLetter=false;
         for (int i = 1; i < string.length(); i++) {
             int letterInt = string.charAt(i);
             if(string.charAt(i-1)==' ' && string.charAt(i)!=' '){
-
+                if (firstLetter==true){
                 string = string.substring(0, i) +(char)(65+(letterInt-97)) + string.substring(i+1);
+                }
+                firstLetter =true;
+
             }
         }
         
